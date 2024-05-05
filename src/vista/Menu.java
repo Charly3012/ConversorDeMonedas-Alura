@@ -13,4 +13,25 @@ public class Menu {
         System.out.println("7 - Salir");
     }
 
+    public String imprimirSalida(int tOrigen, int tSalida, double cambio){
+
+
+        return ("La cantidad de $" + stringMoneda(1) + " es equivalente a $" + cambio + stringMoneda(tSalida));
+    }
+
+    private String stringMoneda(int moneda){
+        if(moneda == 1){
+            return " MXN";
+        } else if (moneda == 2) {
+            return " USD";
+        } else if (moneda == 3) {
+            return " EUR";
+        } else if (moneda == 4) {
+            return " ARS";
+        } else if (moneda == 5) {
+            return " BRL";
+        }else {
+            return " JPY";
+        }
+    }
 }
