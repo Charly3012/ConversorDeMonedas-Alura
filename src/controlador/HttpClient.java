@@ -7,6 +7,7 @@ import com.sun.source.tree.ReturnTree;
 import src.modelo.Moneda;
 import src.modelo.MonedaRecord;
 
+import java.io.FileWriter;
 import java.net.URI;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -32,7 +33,17 @@ public class HttpClient {
         try {
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
-            return gson.fromJson(response.body(), MonedaRecord.class);
+
+            MonedaRecord monedaRecord = gson.fromJson(response.body(), MonedaRecord.class);
+
+            System.out.println(monedaRecord);
+
+            FileWriter escritura = new FileWriter("prueba"+".json");
+            escritura.write(gson.toJson(monedaRecord));
+            escritura.close();
+
+
+            return monedaRecord;
 
             //return new Moneda(monedaRecord);
 

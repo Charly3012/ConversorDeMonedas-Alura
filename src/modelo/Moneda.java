@@ -11,12 +11,12 @@ public class Moneda {
 
 
     public Moneda(MonedaRecord monedaRecord) {
-        this.mxn = monedaRecord.mxn();
-        this.ars = monedaRecord.ars();
-        this.usd = monedaRecord.usd();
-        this.brl = monedaRecord.brl();
-        this.jpy = monedaRecord.jpy();
-        this.eur = monedaRecord.eur();
+        this.mxn = monedaRecord.MXN();
+        this.ars = monedaRecord.ARS();
+        this.usd = monedaRecord.USD();
+        this.brl = monedaRecord.BRL();
+        this.jpy = monedaRecord.JPY();
+        this.eur = monedaRecord.EUR();
 
     }
 
