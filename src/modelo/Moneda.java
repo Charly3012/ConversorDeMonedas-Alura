@@ -11,12 +11,12 @@ public class Moneda {
 
 
     public Moneda(MonedaRecord monedaRecord) {
-        this.mxn = monedaRecord.MXN();
-        this.ars = monedaRecord.ARS();
-        this.usd = monedaRecord.USD();
-        this.brl = monedaRecord.BRL();
-        this.jpy = monedaRecord.JPY();
-        this.eur = monedaRecord.EUR();
+        this.mxn = monedaRecord.conversion_rates().get("MXN");
+        this.ars = monedaRecord.conversion_rates().get("ARS");
+        this.usd = monedaRecord.conversion_rates().get("USD");
+        this.brl = monedaRecord.conversion_rates().get("BRL");
+        this.jpy = monedaRecord.conversion_rates().get("JPY");
+        this.eur = monedaRecord.conversion_rates().get("EUR");
 
     }
 
@@ -31,6 +31,7 @@ public class Moneda {
      */
 
     public double calcularCambio(double entrada, int tipoMoneda) {
+
         return (entrada * convertirTipo(tipoMoneda));
     }
 

@@ -13,10 +13,10 @@ public class Menu {
         System.out.println("7 - Salir");
     }
 
-    public String imprimirSalida(int tOrigen, int tSalida, double cambio){
+    public String imprimirSalida(Double cOringen, int tOrigen, int tSalida, double cambio){
 
 
-        return ("La cantidad de $" + stringMoneda(1) + " es equivalente a $" + cambio + stringMoneda(tSalida));
+        return ("La cantidad de $" +cOringen+ " "+stringMoneda(tOrigen) + " es equivalente a $" + cambio + stringMoneda(tSalida));
     }
 
     private String stringMoneda(int moneda){

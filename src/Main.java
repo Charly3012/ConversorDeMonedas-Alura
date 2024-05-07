@@ -36,7 +36,7 @@ public class Main {
                 break;
 
             //Imprimir la moneda de salida
-            System.out.println(menu.imprimirSalida(tOrigen, tSalida, monedaConsulta.calcularCambio(cOrigen, tOrigen)));;
+            System.out.println(menu.imprimirSalida(cOrigen, tOrigen, tSalida, monedaConsulta.calcularCambio(cOrigen, tSalida)));;
 
             System.out.println("\n\nCalcular otra moneda");
         }

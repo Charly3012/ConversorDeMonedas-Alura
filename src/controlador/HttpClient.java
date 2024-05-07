@@ -17,10 +17,8 @@ public class HttpClient {
     public MonedaRecord consultarMoneda(int monedaEntrada){
         String codigoMoneda = generarMoneda(monedaEntrada);
 
-        Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .setPrettyPrinting()
-                .create();
+        Gson gson = new GsonBuilder().create();
+
 
         URI direccion = URI.create("https://v6.exchangerate-api.com/v6/0a61c98eefa7f967ba72a130/latest/" + codigoMoneda);
 
@@ -36,16 +34,12 @@ public class HttpClient {
 
             MonedaRecord monedaRecord = gson.fromJson(response.body(), MonedaRecord.class);
 
-            System.out.println(monedaRecord);
 
-            FileWriter escritura = new FileWriter("prueba"+".json");
-            escritura.write(gson.toJson(monedaRecord));
-            escritura.close();
 
 
             return monedaRecord;
 
-            //return new Moneda(monedaRecord);
+
 
         } catch (Exception e) {
             throw new RuntimeException("No encontre la moneda");
